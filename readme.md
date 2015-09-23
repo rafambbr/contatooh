@@ -6,3 +6,7 @@ npm install express@4.8 --save
 
 # Criando arquivo de configuração do NodeJs
 /config/express.js
+
+
+# Rodando o servidor:
+node server
