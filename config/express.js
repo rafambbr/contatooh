@@ -12,8 +12,10 @@ module.exports = function() {
 	app.use(express.static('./public'));
 	
 	
-	// necessário apenas na versão 3.X do Express
-	app.use(app.router);
+	// Configurando template engine, ela deve estar abaixo da configuração do 'middleware' 'express.static'
+	app.set('view engine', 'ejs');
+	app.set('views','./app/views');
+	
 	
 	// abaixo da variável express declarada no topo do arquivo
 	var home = require('../app/routes/home');
