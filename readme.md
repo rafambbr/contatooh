@@ -13,3 +13,14 @@ node server
 
 # Templates Engine do Express => EJS (http://embeddedjs.com)
 npm install ejs@0.8 --save
+
+
+# O nodemon evitar termos que reiniciar o servidor para refletir atualizações 
+npm install nodemon -g
+nodemon server
+
+
+
+
+
+
