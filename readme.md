@@ -8,5 +8,5 @@ npm install express@4.8 --save
 /config/express.js
 
 
-# Rodando o servidor:
+# Rodando o servidor (http://localhost:3000):
 node server

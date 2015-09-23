@@ -3,5 +3,13 @@ var express = require('express');
 
 module.exports = function() {
 	var app = express();
+	
+	// variável de ambiente
+	app.set('port', 3000);
+	
+	// middleware 'express.static'
+	// Configura a pasta que ficara publica para o navegador
+	app.use(express.static('./public'));
+	
 	return app;
 };
