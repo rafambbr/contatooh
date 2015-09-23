@@ -10,3 +10,6 @@ npm install express@4.8 --save
 
 # Rodando o servidor (http://localhost:3000):
 node server
+
+# Templates Engine do Express => EJS (http://embeddedjs.com)
+npm install ejs@0.8 --save
