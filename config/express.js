@@ -1,7 +1,8 @@
 // Utilizaremos o padrão CommonJS utilizado pelo NodeJS ( http://wiki.commonjs.org/wiki/Modules/1.1 )
 var express = require('express');
+var load = require('express-load');
 
-module.exports = function() {
+module.exports = function () {
 	var app = express();
 	
 	// variável de ambiente
@@ -14,14 +15,14 @@ module.exports = function() {
 	
 	// Configurando template engine, ela deve estar abaixo da configuração do 'middleware' 'express.static'
 	app.set('view engine', 'ejs');
-	app.set('views','./app/views');
-	
-	
-	// abaixo da variável express declarada no topo do arquivo
-	var home = require('../app/routes/home');
-	
-	// abaixo da configuração do último middleware
-	home(app);
-	
+	app.set('views', './app/views');
+
+
+	//O parâmetro {cwd: ‘app’} foi necessário para mudar o diretório padrão
+	load('models', { cwd: 'app' })
+		.then('controllers')
+		.then('routes')
+		.into(app);
+
 	return app;
 };
