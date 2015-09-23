@@ -11,5 +11,15 @@ module.exports = function() {
 	// Configura a pasta que ficara publica para o navegador
 	app.use(express.static('./public'));
 	
+	
+	// necessário apenas na versão 3.X do Express
+	app.use(app.router);
+	
+	// abaixo da variável express declarada no topo do arquivo
+	var home = require('../app/routes/home');
+	
+	// abaixo da configuração do último middleware
+	home(app);
+	
 	return app;
 };
