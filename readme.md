@@ -40,4 +40,9 @@ bower install angular-route#1.3 --save
 # Adicionando Bootstrap pelo Bower
 bower install bootstrap#3.3 --save
 
+# Add. 'angular-resource' para trabalhar com REST
+bower install angular-resource#1.3 --save
+
+
+
 
