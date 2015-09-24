@@ -46,3 +46,50 @@ bower install angular-resource#1.3 --save
 
 
 
+
+
+
+
+
+# ##############################################################
+# MongoDB
+# ##############################################################
+mongo --port 27017 --host localhost
+
+# Cria 'db' 'contatooh'
+use contatooh
+
+# Cria registro no MongoDB na collection 'contatos' dentro do db 'contatooh'
+var contato1 = { "nome" : "Contato 1 Mongo", "email" : "cont1@empresa.com.br" }
+var contato2 = { "nome" : "Contato 2 Mongo", "email" : "cont2@empresa.com.br" }
+var contato3 = { "nome" : "Contato 3 Mongo", "email" : "cont3@empresa.com.br" }
+db.contatos.insert(contato1)
+db.contatos.insert(contato2)
+db.contatos.insert(contato3)
+
+# Mostra Collections criadas
+show dbs
+show collections
+
+# Buscando documentos
+db.contatos.find();
+
+# apagando o banco 
+db.dropDatabase();
+
+# Vendo registro a registro
+var contatos = db.contatos.find()
+contatos.next()
+contatos.next()
+contatos.next()
+
+# Retorna apenas o primeiro registro
+db.contatos.findOne()
+
+# Buscas com critérios
+var criterio = { "email" : "cont2@empresa.com.br" }
+var contato = db.contatos.find(criterio)
+contato
+
+
+
