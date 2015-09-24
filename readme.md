@@ -19,6 +19,10 @@ npm install ejs@0.8 --save
 npm install nodemon -g
 nodemon server
 
+# Utilizando 'method-override' para navegadores que não suportam 
+# os metodos HTTP: DELETE, PUT
+npm install body-parser@1.6 method-override@2.1 --save
+
 
 
 
