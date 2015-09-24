@@ -37,4 +37,7 @@ bower install angular#1.3 --save
 # Adicionando modulo de rotas do AngularJS
 bower install angular-route#1.3 --save
 
+# Adicionando Bootstrap pelo Bower
+bower install bootstrap#3.3 --save
+
 
