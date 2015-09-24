@@ -23,8 +23,16 @@ nodemon server
 # os metodos HTTP: DELETE, PUT
 npm install body-parser@1.6 method-override@2.1 --save
 
+# Instalando Bower para gerenciamento de dependências do front-end
+npm install bower@1.3 -g
+bower init
 
-
+# Criando o arquivo '.bowerrc' para configurar em qual pasta serão salvas as dependêcnias do Bower
+# bower install pacote#versao --save
+# bower search angular
+# bower info angular
+# bower uninstall angular --save
+bower install angular#1.3 --save
 
 
 

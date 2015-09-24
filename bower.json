@@ -1,0 +1,20 @@
+{
+  "name": "contatooh",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rafambbr/contatooh",
+  "authors": [
+    "Rafael Camargo <rafael.camargo.sp@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "library",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  }
+}
