@@ -1,9 +1,10 @@
 angular.module('contatooh').controller('ContatoController', function ($scope, $routeParams, $resource) {
 
 	var Contato = $resource('/contatos/:id');
-	$scope.contato = new Contato();
+	$scope.contato = {};
 
 	if ($routeParams.contatoId) {
+		//ATUALIZA
 		//Só busca dados do contato se o ID for passado
 		Contato.get({ id: $routeParams.contatoId },
 			function (contato) {
@@ -16,7 +17,8 @@ angular.module('contatooh').controller('ContatoController', function ($scope, $r
 			}
 			);
 	} else {
-		$scope.contato = {};
+		//CRIA
+		$scope.contato = new Contato();
 	}
 
 	$scope.salva = function () {
