@@ -32,6 +32,11 @@ module.exports = function () {
 			res.json(contato) :
 			res.status(404).send('Contato não encontrado');
 	};
+	
+	
+	controller.salvaContato = function(req, res) {
+		//TODO
+	};
 
 	return controller;
 }; 
