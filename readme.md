@@ -34,5 +34,7 @@ bower init
 # bower uninstall angular --save
 bower install angular#1.3 --save
 
+# Adicionando modulo de rotas do AngularJS
+bower install angular-route#1.3 --save
 
 
