@@ -1,3 +1,8 @@
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rafambbr/contatooh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+
+
+
 # Comandos executados:
 
 # Cria o arquivo "package.json" já com valores default
