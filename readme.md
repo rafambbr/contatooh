@@ -1,3 +1,8 @@
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rafambbr/contatooh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+
+
+
 # Comandos executados:
 
 # Cria o arquivo "package.json" já com valores default
@@ -63,11 +68,15 @@ bower install bootstrap#3.3 --save
 bower install angular-resource#1.3 --save
 ```
 
+# Instalando driver do MongoDB
+```
+npm install mongodb@1.4 --save
+```
 
-
-
-
-
+# Instalando o 'Mongoose' uma abstração para interagir de forma mais fácil com o driver do MongoDB
+```
+npm install mongoose@3.8 --save
+```
 
 
 
