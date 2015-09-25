@@ -13,8 +13,7 @@ module.exports = function (app) {
 	 * callback URL no GitHub
 	 */
 	app.get('/auth/github/callback',
-		passport.authenticate('github', 
-			{	successRedirect: '/'}
-	));
-	
+		passport.authenticate('github', { successRedirect: '/' })
+		);
+
 }
