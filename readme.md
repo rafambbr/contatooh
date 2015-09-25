@@ -68,6 +68,10 @@ bower install bootstrap#3.3 --save
 bower install angular-resource#1.3 --save
 ```
 
+# Instalando driver do MongoDB
+```
+npm install mongodb@1.4 --save
+```
 
 
 
