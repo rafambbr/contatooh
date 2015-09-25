@@ -78,6 +78,23 @@ npm install mongodb@1.4 --save
 npm install mongoose@3.8 --save
 ```
 
+# OAuth 2.0 com Passport(http://passportjs.org/)
+```
+npm install passport@0.2 --save
+npm install express-session@1.7 cookie-parser@1.3 --save
+npm install passport-github@0.1 --save
+```
+
+# habilita 'findOrCreate' do Mongoose
+```
+npm install mongoose-findorcreate@0.1 --save
+```
+
+
+
+
+
+
 
 
 
