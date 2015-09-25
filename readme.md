@@ -73,10 +73,10 @@ bower install angular-resource#1.3 --save
 npm install mongodb@1.4 --save
 ```
 
-
-
-
-
+# Instalando o 'Mongoose' uma abstração para interagir de forma mais fácil com o driver do MongoDB
+```
+npm install mongoose@3.8 --save
+```
 
 
 
