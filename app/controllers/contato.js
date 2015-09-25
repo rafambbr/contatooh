@@ -13,7 +13,7 @@ module.exports = function (app) {
 					console.error(erro);
 					res.status(500).json(erro);
 				}
-				);
+			);
 	};
 
 	controller.obtemContato = function (req, res) {
@@ -28,7 +28,7 @@ module.exports = function (app) {
 					console.log(erro);
 					res.status(404).json(erro);
 				}
-				);
+			);
 	 };
 
 	controller.removeContato = function (req, res) {
@@ -41,7 +41,7 @@ module.exports = function (app) {
 				function (erro) {
 					return console.error(erro);
 				}
-				);
+			);
 	 };
 
 	controller.salvaContato = function (req, res) {
@@ -56,7 +56,7 @@ module.exports = function (app) {
 						console.error(erro);
 						res.status(500).json(erro);
 					}
-					);
+				);
 		} else {
 			Contato.create(req.body)
 				.then(
@@ -67,7 +67,7 @@ module.exports = function (app) {
 						console.log(erro);
 						res.status(500).json(erro);
 					}
-					);
+				);
 		}
 
 	 };
