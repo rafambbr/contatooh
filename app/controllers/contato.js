@@ -32,7 +32,7 @@ module.exports = function (app) {
 	 };
 
 	controller.removeContato = function (req, res) {
-		var _id = req.params.id;
+		var _id = sanitize(req.params.id); //'sanitize()' do 'mongo-sanitize' evita 'query selector injection'
 		Contato.remove({ "_id": _id }).exec()
 			.then(
 				function () {
@@ -47,9 +47,27 @@ module.exports = function (app) {
 	controller.salvaContato = function (req, res) {
 		var _id = req.body._id;
 		
+		/*
+		Independente da quantidade de parâmetros, apenas selecionamos o 'nome', 'email' e 'emergencia'
+		Isso impede que caso o POST tenha sido manipulado e tenha sido enviados mais parâmetros no 'body'
+		só será gravado no MongoDB o que realmente deve ser criado.
+		
+		No nosso caso como utilizamos o Mongoose ele ameniza esse problema, pois ele garante que sera o 
+		objeto enviado respeite o contrato definido nos modelos '/models/contato.js' sem a possibilidade 
+		de adição de novas propriedades no nosso modelo
+		
+		Repare que, por mais que seja interessante utilizar na íntegra os dados enviados na requisição, 
+		é altamente recomendado realizarmosumfiltro antes, mesmo que isso aumente nossa impedância.
+		*/
+		var dados = {
+			"nome": req.body.nome,
+			"email": req.body.email,
+			"emergencia": req.body.emergencia || null
+		};
+		
 		// testando por undefined
 		req.body.emergencia = req.body.emergencia || null;
-		
+
 		if (_id) {
 			Contato.findByIdAndUpdate(_id, req.body).exec()
 				.then(
@@ -60,7 +78,7 @@ module.exports = function (app) {
 						console.error(erro);
 						res.status(500).json(erro);
 					}
-				);
+					);
 		} else {
 			Contato.create(req.body)
 				.then(
