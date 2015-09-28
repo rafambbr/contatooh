@@ -1,3 +1,5 @@
+var ContatosPage = new require('./pages/contatosPage');
+
 describe('Página principal', function () {
 	
 	var pagina = new ContatosPage();
