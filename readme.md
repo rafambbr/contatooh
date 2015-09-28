@@ -90,10 +90,11 @@ npm install passport-github@0.1 --save
 npm install mongoose-findorcreate@0.1 --save
 ```
 
+# Add. Helmet => Coletânea de middlewares de tratamento de header já prontos para uso, tornando nossa aplicaçãomais segura
+npm install helmet@0.4 --save
 
-
-
-
+# Evitando query selector injection no MongoDB
+npm install mongo-sanitize@1.0 --save
 
 
 
