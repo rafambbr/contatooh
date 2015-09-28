@@ -1,6 +1,6 @@
 export NODE_ENV=development
-export SELENIUM_USER=nome_de_um_usuario_no_github
-export SELENIUM_USER_PASSWORD=senha_do_usuario
-export CLIENT_ID=client_id_da_apliacao
-export CLIENT_SECRET=senha_do_client
+export SELENIUM_USER=contatooh01
+export SELENIUM_USER_PASSWORD=contatooh01DEV
+export CLIENT_ID=ec5e077c962d7894a29f
+export CLIENT_SECRET=c539c578795bae522313bbc84e5d642dea64b1da
 node server
