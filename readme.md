@@ -100,15 +100,20 @@ npm install mongo-sanitize@1.0 --save
 
 
 
+# ##############################################################
+# GRUNT => Automação de tarefas front-end
+# ##############################################################
+npm install grunt@0.4 --save-dev
+npm install -g grunt-cli@0.1
 
+npm install grunt-contrib-copy@0.7 --save-dev
+npm install grunt-contrib-clean@0.6 --save-dev
 
-
-
-
-
-
-
-
+npm install grunt-contrib-concat@0.5 --save-dev
+npm install grunt-contrib-uglify@0.6 --save-dev
+npm install grunt-contrib-cssmin@0.10 --save-dev
+npm install grunt-usemin@2.6 --save-dev
+npm install grunt-ng-annotate@0.5 --save-dev
 
 
 

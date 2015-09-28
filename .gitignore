@@ -31,3 +31,7 @@ build/Release
 node_modules
 
 /public/vendor/*
+
+/dist/*
+
+.tmp/*
