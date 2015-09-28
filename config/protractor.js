@@ -2,6 +2,9 @@ exports.config = {
 	specs: ['../test/e2e/**/*.js'],
 
 	onPrepare: function () {
+		
+		var config = require('./config')();
+		
 		//'onPrepare' => é executado apenas uma vez antes dos testes
 		//Aqui usamos  o 'browser.driver' pois a pagina do GitHub não é feita em AngularJS
 		browser.driver.get("http://localhost:3000");
@@ -12,8 +15,9 @@ exports.config = {
 		var btnCommit = by.name('commit');
 
 		browser.driver.findElement(linkEntrar).click();
-		browser.driver.findElement(fildLogin).sendKeys('contatooh.01@gmail.com');
-		browser.driver.findElement(fildPassword).sendKeys('contatooh01DEV');
+		browser.driver.findElement(fildLogin).sendKeys(config.seleniumUser);
+		browser.driver.findElement(fildPassword).sendKeys(config.seleniumUserPassword);
 		browser.driver.findElement(btnCommit).click();
+
 	}
 };
