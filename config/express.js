@@ -90,8 +90,16 @@ module.exports = function () {
 	//'expressload' => O parâmetro {cwd: ‘app’} foi necessário para mudar o diretório padrão
 	load('models', { cwd: 'app' })
 		.then('controllers')
+		.then('routes/auth.js')
 		.then('routes')
 		.into(app);
+		
+	// Essa configuração deve vir obrigatoriamente como última rota da aplicação, dando chance para que outras sejam processadas.
+	// Precisamos ter a garantia de que ela seja a última rota processada e teremos essa certeza colocando-a imediatamente após 
+	// o carregamento de rotas com express-load
+	app.get('*', function(req, res) {
+		res.status(404).render('404');
+	});
 
 	return app;
 };
