@@ -14,6 +14,11 @@ module.exports = function (app) {
 	 */
 	app.get('/auth/github/callback',
 		passport.authenticate('github', { successRedirect: '/' })
-		);
+	);
+
+	app.get('/logout', function (req, res) {
+		req.logOut(); // req.logOut adicionada automaticamente pelo Passport a cada requisição
+		res.redirect('/');
+	});
 
 }
