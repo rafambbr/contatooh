@@ -2,6 +2,9 @@
 var express = require('express');
 var load = require('express-load');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
 
 module.exports = function () {
 	var app = express();
@@ -12,6 +15,16 @@ module.exports = function () {
 	// middleware 'express.static'
 	// Configura a pasta que ficara publica para o navegador
 	app.use(express.static('./public'));
+	
+	//Configura Sessão para utilizar => OAuth 2.0 com Passport
+	app.use(cookieParser());
+	app.use(session( 
+		{ secret: 'homem avestruz',
+			resave: true,
+		  saveUninitialized: true
+	}));
+	app.use(passport.initialize());
+	app.use(passport.session());
 	
 	
 	// Configurando template engine, ela deve estar abaixo da configuração do 'middleware' 'express.static'

@@ -1,4 +1,6 @@
-angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routeProvider) {
+angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routeProvider, $httpProvider) {
+	
+	$httpProvider.interceptors.push('meuInterceptor');
 	
 	$routeProvider.when('/contatos', {
 		templateUrl: 'partials/contatos.html',
@@ -13,6 +15,10 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routePr
 	$routeProvider.when('/contato', {
 		templateUrl: 'partials/contato.html',
 		controller: 'ContatoController'
+	});
+	
+	$routeProvider.when('/auth', {
+		templateUrl: 'partials/auth.html'
 	});
 	
 	$routeProvider.otherwise({redirectTo: '/contatos'});
