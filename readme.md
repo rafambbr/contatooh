@@ -1,5 +1,6 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rafambbr/contatooh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+[![Travis CI](https://travis-ci.org/rafambbr/contatooh.svg?branch=develop)](https://travis-ci.org/rafambbr/contatooh.svg?branch=develop)
 
 
 
