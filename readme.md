@@ -120,8 +120,14 @@ karma init config/karma.config.js
 karma start config/karma.config.js
 bower install angular-mocks#1.3 --save-dev
 
+# O Protractor precisa do Java Development Kit (SDK) instalado (http:
+# //www.oracle.com/technetwork/java/javase/downloads/index.html)
+npm install -g protractor@1.5
+webdriver-manager update
 
-
+# O servidor precisa estar rodando para rodar o protractor
+node server
+protractor config/protractor.js
 
 
 
