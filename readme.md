@@ -96,10 +96,6 @@ npm install helmet@0.4 --save
 # Evitando query selector injection no MongoDB
 npm install mongo-sanitize@1.0 --save
 
-
-
-
-
 # ##############################################################
 # GRUNT => Automação de tarefas front-end
 # ##############################################################
@@ -114,6 +110,41 @@ npm install grunt-contrib-uglify@0.6 --save-dev
 npm install grunt-contrib-cssmin@0.10 --save-dev
 npm install grunt-usemin@2.6 --save-dev
 npm install grunt-ng-annotate@0.5 --save-dev
+
+# ##############################################################
+# TESTES
+# ##############################################################
+npm install karma@0.12 --save-dev
+npm install -g karma-cli@0.0
+karma init config/karma.config.js
+karma start config/karma.config.js
+bower install angular-mocks#1.3 --save-dev
+
+# O Protractor precisa do Java Development Kit (SDK) instalado (http:
+# //www.oracle.com/technetwork/java/javase/downloads/index.html)
+npm install -g protractor@1.5
+webdriver-manager update
+
+# O servidor precisa estar rodando para rodar o protractor
+node server
+protractor config/protractor.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
