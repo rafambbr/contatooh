@@ -14,6 +14,7 @@
 </p>
 
 <meu-painel titulo="Listagem de contatos">
+	
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
@@ -22,10 +23,9 @@
 				<th>Emergência</th>
 				<th class="text-center">Ação</th>
 			</tr>
+			
 			<tr ng-repeat="contato in contatos | filter: filtro">
-				<td>
-					<a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a>
-				</td>
+				<td><a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a></td>
 				<td>{{contato.email}}</td>
 				<td>{{contato.emergencia.nome}}</td>
 				<td class="text-center">
@@ -34,4 +34,5 @@
 			</tr>
 		</table>
 	</div>
-<meu-painel>
+	
+</meu-painel>
