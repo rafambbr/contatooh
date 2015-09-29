@@ -46,11 +46,6 @@ describe('meuBotaoAviso', function () {
 
 		it('Deve focar o botão', function () {
 			angular.element(document.body).append(element);
-		});
-
-
-		it('Deve focar o botão', function () {
-			angular.element(document.body).append(element);
 			$scope.$broadcast(evento);
 			expect(angular.element(document.activeElement).text()).toBe('Voltar');
 		});
