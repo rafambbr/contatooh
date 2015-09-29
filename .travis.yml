@@ -6,7 +6,7 @@ notifications:
 
 env:
   global:
-    - NODE_ENV: development
+    - NODE_ENV: test
 
 before_install:
   - npm install -g bower@1.3
