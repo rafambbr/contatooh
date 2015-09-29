@@ -1,3 +1,5 @@
+var sanitize = require('mongo-sanitize');
+
 module.exports = function (app) {
 
 	var Contato = app.models.contato;
