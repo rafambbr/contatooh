@@ -34,22 +34,20 @@ angular.module('meusComponentes', [])
 	})
 
 	.directive('meuFocus', function () {
+		
 		var directive = {};
-
+		
 		directive.restrict = 'A';
-
+		
 		directive.scope = {
-			focus: '='
+			evento: '@'
 		};
-
+		
 		directive.link = function (scope, element) {
-			scope.$watch('focus', function () {
-				if (scope.focus) {
-					element[0].focus();
-					scope.focus = false;
-				}
+			scope.$on(scope.evento, function () {
+				element[0].focus();
 			});
 		};
-
+		
 		return directive;
 	});
