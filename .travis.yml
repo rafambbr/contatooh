@@ -1,20 +1,33 @@
 language: node_js
 node_js:
-- 0.10
+  - 0.10
 notifications:
-- rafael.camargo.sp@gmail.com
+  - rafael.camargo.sp@gmail.com
+
+env:
+  global:
+    - NODE_ENV: test
 
 before_install:
-- npm install -g bower@1.3
-- npm install -g grunt-cli@0.1
-- npm install -g karma-cli@0.0
-- npm install -g protractor@1.5
-- webdriver-manager update
-- bower install
+  - npm install -g bower@1.3
+  - npm install -g grunt-cli@0.1
+  - npm install -g karma-cli@0.0
+  - npm install -g protractor@1.5
+  - webdriver-manager update
+  - bower install
 
 before_script:
-- grunt
-- cd dist
+  - node test/data.js
+  - grunt
+  - cd dist
 
 script:
-- karma start config/karma.config.js --single-run --browsers PhantomJS
+  - karma start config/karma.config.js --single-run --browsers PhantomJS
+  - node server &
+  - protractor config/protractor.js
+  
+services:
+  - mongodb  
+  
+addons:
+  sauce_connect: true
