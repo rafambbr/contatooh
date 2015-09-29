@@ -1,13 +1,13 @@
 var config = require('./config')();
 
 exports.config = {
-	sauceUser: 'rafambbr',
-	sauceKey: 'd21c26f4-8b38-4e5a-b9a5-6f17771b8499',
+	sauceUser: config.sauceUser,
+	sauceKey: config.sauceKey,
 	capabilities: {
-		'name': 'Contatooh E2E Testing',
+		'name': config.sauceTestName,
 		'browserName': 'chrome',
-		'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-		'build': process.env.TRAVIS_BUILD_NUMBER
+		'tunnel-identifier': config.travisJobNumber,
+		'build': config.travisBuild
 	},
 	specs: ['../test/e2e/**/*Spec.js'],
 	onPrepare: function () {
