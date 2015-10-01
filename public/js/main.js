@@ -1,4 +1,4 @@
-angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routeProvider, $httpProvider) {
+angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes']).config(function ($routeProvider, $httpProvider) {
 	
 	$httpProvider.interceptors.push('meuInterceptor');
 	
