@@ -1,55 +1,69 @@
-describe('meuBotaoAviso', function () {
+describe('meuBotaoAviso', function() {
 
 	var $scope;
 	var element;
 
-	beforeEach(function () {
+	beforeEach(function() {
 		module('meusComponentes');
-		inject(function ($rootScope, $compile) {
+		inject(function($compile, $rootScope) {
 			$scope = $rootScope.$new();
-			element = angular.element(
-				'<meu-botao-aviso nome="Remover" acao="remove()">');
+			element = angular.element('<meu-botao-aviso nome="Remover" acao="remove()">');
 			$compile(element)($scope);
 			$scope.$digest();
 		});
 	});
 
-	it('deve criar um botão de aviso com texto e função', function () {
-
+	it('deve criar um botão de aviso', function() {
+		
 		expect(element.text()).toContain('Remover');
 		expect(element.attr('acao')).toBe('remove()');
+	});
+});
 
+describe('meuFocus', function() {
+
+	var $scope;
+	var element;
+	var evento = "contatoSalvo";
+
+	beforeEach(function() {
+		module('meusComponentes');
+		inject(function($compile, $rootScope) {
+
+			$scope = $rootScope.$new();
+			element = angular.element('<button meu-focus evento="' + evento + '">Voltar</button>');
+			$compile(element)($scope);
+			$scope.$digest();
+		});
+	});
+
+	it('Deve focar o botão', function() {
+		angular.element(document.body).append(element);
+		$scope.$broadcast(evento);
+		expect(angular.element(document.activeElement).text()).toBe('Voltar');
 	});
 
 });
 
-
-describe('meuBotaoAviso', function () {
+describe('meuPainel', function() {
 
 	var $scope;
 	var element;
-	var evento = 'contatoSalvo';
 
-	beforeEach(function () {
+	beforeEach(function() {
 		module('meusComponentes');
-		inject(function ($rootScope, $compile) {
+		module('templates');
+		inject(function($compile, $rootScope) {
 			$scope = $rootScope.$new();
-
-			element = angular.element('<button meu-focus evento="' + evento + '">Voltar</button>');
-
+			element = angular.element('<meu-painel titulo="Principal"><p>Oi</p></meu-painel>');
 			$compile(element)($scope);
 			$scope.$digest();
 		});
 	});
 
-	describe('meuFocus', function () {
-
-		it('Deve focar o botão', function () {
-			angular.element(document.body).append(element);
-			$scope.$broadcast(evento);
-			expect(angular.element(document.activeElement).text()).toBe('Voltar');
-		});
-
+	it('Deve criar um painel', function() {
+		expect(element.find('h3').text()).toContain('Principal');
+		expect(element.find('p').text()).toContain('Oi');
 	});
 
 });

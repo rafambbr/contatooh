@@ -133,6 +133,50 @@ protractor config/protractor.js
 # Rodando testes usando o PhantomJS um browser sem interface grafica
 npm install karma-phantomjs-launcher@0.1 --save-dev
 karma start config/karma.config.js --single-run --browsers PhantomJS
+npm install karma-ng-html2js-preprocessor@0.1 --save-dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
