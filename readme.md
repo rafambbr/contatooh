@@ -176,13 +176,39 @@ npm install karma-ng-html2js-preprocessor@0.1 --save-dev
 
 
 
+# ##############################################################
+# OpenShift (http://www.openshift.com/)
+# ##############################################################
+# Instalando o cliente em linha de comando https://developers.openshift.com/en/getting-started-overview.html
+```
+gem sources -r https://rubygems.org/
+gem sources -a http://rubygems.org/
 
+gem install rhc
+gem install net-ssh -v 2.9.3.beta1
+rhc setup -k
 
+rhc create-app contatooh nodejs-0.10 mongodb-2.4
+rhc show-app contatooh
+```
 
+# URL da aplicação rodando:
+```
+https://contatooh-rafambbr.rhcloud.com/
+```
 
+# Analisando o Log da aplicação
+```
+rhc tail contatooh
+```
 
-
-
+# Criando variáveis de ambiente para aplicação no OpenShift
+```
+rhc set-env NODE_ENV='production' -a contatooh
+rhc set-env CLIENT_ID='seuNovoClientId' -a contatooh
+rhc set-env CLIENT_SECRET='seuNovoClientSecret' -a contatooh
+rhc set-env NPM_CONFIG_PRODUCTION="true" -a contatooh
+```
 
 # ##############################################################
 # MongoDB
