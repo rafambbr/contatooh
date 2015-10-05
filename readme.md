@@ -211,6 +211,21 @@ rhc set-env NPM_CONFIG_PRODUCTION="true" -a contatooh
 ```
 
 # ##############################################################
+# Integração (OpenShift + Travis CI)
+# ##############################################################
+# Integração entre TravisCI e OpenShift
+```
+gem install travis
+```
+
+# Dentro do repositório do GIT, executaremos o comando
+```
+travis setup openshift
+```
+
+
+
+# ##############################################################
 # MongoDB
 # ##############################################################
 ```
